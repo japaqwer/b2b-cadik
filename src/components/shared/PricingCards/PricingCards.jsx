@@ -10,36 +10,36 @@ const pricingPlans = [
     name: "СТАНДАРТ",
     price: "300₽",
     title: "",
-    duration: "Продолжительность 1 минута 16 секунд",
+    duration: "Продолжительность 1 минута 28 секунд",
     image:
-      "https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/a47b466b-8bd1-459a-9df3-6fd1ef85b0b8.png",
-    demoUrl: "https://kinescope.io/embed/23QBdNEg7huhR6h7tGkrL2",
-    href: "/kvadrat/323248d0-5136-41f2-bf64-c2c32446a59a",
+      "https://3051c4dd-6445-4f5d-8dd4-ca4d65add868.selstorage.ru/templates/DMdetsadQ/preview/31be46cf-6c47-4d0a-9e0a-36976457740c.png",
+    demoUrl: "https://kinescope.io/embed/oSgsHY7pX7PqforKwhHpdL",
+    href: "/kvadrat/4eb9e1fd-730e-4f10-be02-cffd71c65867",
   },
   {
     id: 2,
     name: "СТАНДАРТ ПЛЮС",
     price: "600₽",
     title: "",
-    duration: "Продолжительность 2:20 минуты",
+    duration: "Продолжительность 2:30 минуты",
     image:
-      "https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/502b48de-e500-438e-8ee7-35afbfe8a434.png",
-    demoUrl: "https://kinescope.io/embed/vN9xb1wUGnGk75D83nj5Tj",
+      "https://3051c4dd-6445-4f5d-8dd4-ca4d65add868.selstorage.ru/templates/DMvdetsad/preview/776770a7-ae08-46c3-84c0-4896ba985620.png",
+    demoUrl: "https://kinescope.io/embed/tQR6cRekr4NDztC4EEdNKk",
     // featured: true,
-    href: "/detail/f5c43f0d-47b8-4222-afaf-b63bb94895df",
+    href: "/detail/4f6c55a6-afea-451e-b738-8e04fbe4f177",
   },
-  {
-    id: 3,
-    name: "ПРЕМИУМ от",
-    price: "1500₽",
-    title: "",
-    duration: "Продолжительность индивидуально",
-    image:
-      "https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/5fd2e1c8-4dca-4c11-b379-2f2a3cf33155.jpg",
-    demoUrl: "https://kinescope.io/embed/7vgMJydBP6KF7voc7iJPiA",
-    // featured: true,
-    href: "https://t.me/multfamilyoficial",
-  },
+  // {
+  //   id: 3,
+  //   name: "ПРЕМИУМ от",
+  //   price: "1500₽",
+  //   title: "",
+  //   duration: "Продолжительность индивидуально",
+  //   image:
+  //     "https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/5fd2e1c8-4dca-4c11-b379-2f2a3cf33155.jpg",
+  //   demoUrl: "https://kinescope.io/embed/7vgMJydBP6KF7voc7iJPiA",
+  //   // featured: true,
+  //   href: "https://t.me/multfamilyoficial",
+  // },
 ];
 
 export default function PricingCards() {

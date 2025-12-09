@@ -7,7 +7,7 @@ export default function Header() {
     <div className={s.header}>
       <Link href={"/"}>
         <img
-          src="https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/b1fe3967-a65c-4aa2-80a7-e571ac46258e.png"
+          src="https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/9dc4850a-0e9d-486c-bc80-fc3fed0c5c4e.png"
           alt="ss"
         />
       </Link>
