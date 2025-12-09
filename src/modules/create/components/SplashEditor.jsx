@@ -32,9 +32,9 @@ export function SplashEditor({ template, onCreate }) {
       if (width <= 360) {
         newScaleFactor = 0.5; // 16px от базовых 32px
       } else if (width <= 480) {
-        newScaleFactor = 0.5625; // 18px
+        newScaleFactor = 0.5; // 18px
       } else if (width <= 768) {
-        newScaleFactor = 0.6875; // 22px
+        newScaleFactor = 0.5; // 22px
       } else if (width <= 1024) {
         newScaleFactor = 0.8125; // 26px
       } else {
