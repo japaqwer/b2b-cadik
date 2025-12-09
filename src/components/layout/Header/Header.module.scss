@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  img {
+    max-width: 900px;
+    border-radius: 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 100px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

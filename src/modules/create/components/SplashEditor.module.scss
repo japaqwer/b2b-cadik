@@ -1,0 +1,485 @@
+// ===== МАКРОСЫ =====
+@mixin smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ===== SPLASH EDITOR СТИЛИ =====
+
+.inputName {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  font-size: 20px;
+  font-family: "Arco", sans-serif !important;
+  font-weight: 700;
+  line-height: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(71, 212, 215, 0.15) 0%,
+    rgba(81, 146, 255, 0.15) 100%
+  );
+  border: 3px solid rgba(71, 212, 215, 0.4);
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000, 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #000;
+  min-height: 120px;
+  resize: vertical;
+  text-align: center;
+  @include smooth-transition;
+
+  &:focus {
+    border-color: #47d4d7;
+    box-shadow: 0 0 0 4px rgba(71, 212, 215, 0.2);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke-width: 0.8px;
+  }
+}
+
+.editorContainer {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.confirmContainer {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.max {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.textError {
+  position: absolute;
+  margin-top: 30%;
+  z-index: 999;
+  width: 70%;
+  max-width: 400px;
+  background: rgba(255, 51, 51, 0.9);
+  padding: 16px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(255, 51, 51, 0.3);
+}
+
+// ===== ТЕКСТ ЭЛЕМЕНТЫ =====
+.textdr {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 26px;
+  text-wrap: nowrap;
+  max-width: 640px;
+  color: #333;
+}
+
+.textspan {
+  font-size: 32px;
+  font-family: "Arco", sans-serif !important;
+  font-weight: 700;
+  line-height: 38px;
+  max-width: 640px;
+  color: #fff;
+}
+
+.divqwe {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  color: #fff;
+  white-space: pre-wrap;
+  text-align: center;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #000;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000, 2px 2px 4px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.coverFrame {
+  pointer-events: none;
+}
+
+// ===== ЗАГОЛОВКИ =====
+.h21 {
+  margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #666;
+  padding: 0 20px;
+}
+
+// ===== КОНТЕЙНЕР РЕДАКТОРА =====
+.editorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.previewBox {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  border: 3px solid rgba(71, 212, 215, 0.3);
+  overflow: hidden;
+  user-select: none;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// ===== КНОПКИ =====
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(134deg, #47d4d7, #5192ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(71, 212, 215, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(71, 212, 215, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.buttongreen {
+  background: linear-gradient(180deg, #5192ff 0%, #3d7ae8 100%);
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(81, 146, 255, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(81, 146, 255, 0.4);
+  }
+}
+
+// ===== CONTROLS =====
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+
+  button,
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+// ===== FLEX CONTAINER =====
+.flex {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+
+  button,
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ===== RESPONSIVE =====
+
+// Планшеты и ноутбуки (769px - 1024px)
+@media (max-width: 1024px) and (min-width: 769px) {
+  .previewBox {
+    max-width: calc(100vw - 60px);
+  }
+
+  .inputName {
+    width: calc(100% - 60px);
+  }
+
+  .h21 {
+    font-size: 23px;
+  }
+}
+
+// Средние планшеты (481px - 768px)
+@media (max-width: 768px) and (min-width: 481px) {
+  .inputName {
+    font-size: 18px;
+    padding: 18px;
+    min-height: 110px;
+    line-height: 28px;
+  }
+
+  .textspan {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .textdr {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .previewBox {
+    max-width: calc(100vw - 40px);
+    border-radius: 8px;
+  }
+
+  .h21 {
+    font-size: 21px;
+  }
+
+  .button,
+  .buttongreen {
+    padding: 11px 24px;
+    font-size: 13px;
+  }
+
+  .flex {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .wrap {
+    gap: 10px;
+  }
+}
+
+// Мобильные устройства (до 480px)
+@media (max-width: 480px) {
+  .inputName {
+    font-size: 16px;
+    padding: 16px;
+    min-height: 100px;
+    margin-bottom: 16px;
+    line-height: 24px;
+  }
+
+  .textdr {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .previewBox {
+    max-width: calc(100vw - 24px);
+    border-width: 2px;
+  }
+
+  .h21 {
+    font-size: 19px;
+    margin-top: 16px;
+  }
+
+  .button,
+  .buttongreen {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .flex,
+  .wrap {
+    gap: 10px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 0 12px;
+
+    button,
+    a {
+      flex: 1;
+      min-width: 100px;
+    }
+  }
+
+  .editorContainer {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .controls {
+    margin-top: 12px;
+
+    button,
+    a {
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+  }
+
+  .buttonGroup {
+    width: 100%;
+    padding: 0 12px;
+
+    button {
+      flex: 1;
+    }
+  }
+}
+
+// Маленькие мобильные (до 375px)
+@media (max-width: 375px) {
+  .inputName {
+    font-size: 15px;
+    padding: 14px;
+    min-height: 90px;
+    line-height: 22px;
+  }
+
+  .textspan {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .textdr {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .previewBox {
+    max-width: calc(100vw - 20px);
+  }
+
+  .h21 {
+    font-size: 18px;
+  }
+
+  .button,
+  .buttongreen {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .flex,
+  .wrap {
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .editorContainer {
+    padding: 10px;
+  }
+
+  .buttonGroup {
+    padding: 0 10px;
+  }
+}
+
+// Очень маленькие экраны (до 320px)
+@media (max-width: 320px) {
+  .inputName {
+    font-size: 14px;
+    padding: 12px;
+    min-height: 80px;
+    line-height: 20px;
+  }
+
+  .textspan {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .previewBox {
+    max-width: calc(100vw - 16px);
+  }
+
+  .button,
+  .buttongreen {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .flex,
+  .wrap {
+    padding: 0 8px;
+  }
+
+  .editorContainer {
+    padding: 8px;
+  }
+
+  .buttonGroup {
+    padding: 0 8px;
+  }
+}

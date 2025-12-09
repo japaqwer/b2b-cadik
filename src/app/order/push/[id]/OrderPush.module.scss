@@ -1,0 +1,474 @@
+// OrderPush.module.scss
+
+// ===== ПЕРЕМЕННЫЕ =====
+$primary-orange: #ff9922;
+$primary-orange-dark: #ff8800;
+$primary-green: #009a3b;
+$primary-green-dark: #008229;
+$primary-blue: #4a90e2;
+$primary-blue-dark: #2e5c8a;
+
+$gradient-orange: linear-gradient(135deg, #ff9922 0%, #ff8800 100%);
+$gradient-green: linear-gradient(180deg, #009a3b 0%, #008229 100%);
+$gradient-blue: linear-gradient(135deg, #4a90e2 0%, #2e5c8a 100%);
+
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+$shadow-warning: 0 4px 12px rgba(255, 152, 34, 0.2);
+
+$text-primary: #333;
+$text-secondary: #666;
+$text-light: #999;
+$bg-light: #f8f9fa;
+
+@mixin smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ===== ОСНОВНОЙ КОНТЕЙНЕР =====
+.container {
+  width: 100%;
+  background: linear-gradient(135deg, $bg-light 0%, #fff 100%);
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 20px 12px;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 10px;
+  }
+}
+
+// ===== CENTER =====
+.center {
+  @include flex-center;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 20px;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    padding: 20px 12px;
+    min-height: auto;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 10px;
+    gap: 12px;
+  }
+}
+
+// ===== ПРЕДУПРЕЖДЕНИЕ =====
+.war {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff9922 0%, #ff8800 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: $shadow-warning;
+  animation: slideDown 0.5s ease-out;
+  margin-top: 20px !important;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-top: 12px !important;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-top: 8px !important;
+  }
+}
+
+// ===== ЗАГОЛОВКИ =====
+.h22 {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  padding: 10px;
+  max-width: 500px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 6px;
+    line-height: 1.4;
+  }
+}
+
+.h212 {
+  font-family: "Nunito", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: $primary-orange;
+  text-align: center;
+  margin: 16px 0;
+  @include smooth-transition;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 8px;
+
+  &:hover {
+    transform: scale(1.05);
+    text-decoration-color: $primary-orange;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 12px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin: 10px 0;
+    text-underline-offset: 6px;
+  }
+}
+
+.h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  margin: 0 0 16px 0;
+  @include smooth-transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+// ===== FLEX КОНТЕЙНЕР =====
+.flex {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: -20px;
+}
+
+// ===== КНОПКИ =====
+.buttonBlue,
+.buttonGreen,
+.buttonOrange {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  text-wrap: nowrap;
+  font-weight: 600;
+  cursor: pointer;
+  @include smooth-transition;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 160px;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.buttonBlue {
+  background: $gradient-blue;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  }
+}
+
+.buttonGreen {
+  background: $gradient-green;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 154, 59, 0.3);
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 154, 59, 0.4);
+  }
+}
+
+.buttonOrange {
+  background: $gradient-orange;
+  color: #fff;
+  box-shadow: $shadow-warning;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(255, 153, 34, 0.4);
+  }
+}
+
+// ===== КАРТОЧКА С ИНФОРМАЦИЕЙ =====
+.infoCard {
+  background: #fff;
+  // border-radius: 12px;
+  padding: 24px;
+  // max-width: 500px;
+  // box-shadow: $shadow-md;
+  // border-left: 4px solid $primary-orange;
+  // animation: slideDown 0.5s ease-out 0.1s both;
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+}
+
+.infoParagraph {
+  color: $text-secondary;
+  line-height: 1.6;
+  font-size: 28px;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ===== КОД ЗАКАЗА =====
+.orderCode {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 153, 34, 0.1);
+  border: 2px solid $primary-orange;
+  border-radius: 8px;
+  cursor: pointer;
+  @include smooth-transition;
+  margin: 12px 0;
+}
+
+.orderCodeText {
+  font-family: "Courier New", monospace;
+  font-size: 38px;
+  font-weight: 600;
+  color: $primary-orange;
+  text-align: center;
+}
+
+// ===== ИКОНКИ МЕССЕНДЖЕРОВ =====
+.messengerIcon {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 18px;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+}
+
+// ===== СТАТУС =====
+.status {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 154, 59, 0.1);
+  border: 1px solid $primary-green;
+  border-radius: 6px;
+  color: $primary-green;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 12px 0;
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+// ===== АНИМАЦИИ =====
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ===== ЛОАДЕР =====
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 153, 34, 0.2);
+  border-top-color: $primary-orange;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ===== TOAST =====
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: $shadow-lg;
+  z-index: 9999;
+  animation: slideUp 0.3s ease-out;
+
+  @media (max-width: 480px) {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+    padding: 14px 16px;
+  }
+}
+
+// ===== УТИЛИТЫ =====
+.hidden {
+  display: none;
+}
+
+.noSelect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textOrange {
+  color: $primary-orange;
+}
+
+.textGreen {
+  color: $primary-green;
+}
+
+.textBlue {
+  color: $primary-blue;
+}
+
+.mt {
+  &-1 {
+    margin-top: 8px;
+  }
+  &-2 {
+    margin-top: 16px;
+  }
+  &-3 {
+    margin-top: 24px;
+  }
+  &-4 {
+    margin-top: 32px;
+  }
+}
+
+.mb {
+  &-1 {
+    margin-bottom: 8px;
+  }
+  &-2 {
+    margin-bottom: 16px;
+  }
+  &-3 {
+    margin-bottom: 24px;
+  }
+  &-4 {
+    margin-bottom: 32px;
+  }
+}
+
+.gap {
+  &-1 {
+    gap: 8px;
+  }
+  &-2 {
+    gap: 16px;
+  }
+  &-3 {
+    gap: 24px;
+  }
+}

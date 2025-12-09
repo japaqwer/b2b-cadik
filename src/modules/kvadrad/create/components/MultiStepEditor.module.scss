@@ -1,0 +1,604 @@
+// ===== ЦВЕТА =====
+$primary-orange: #5192ff;
+$primary-orange-dark: #5192ff;
+$primary-green: #009a3b;
+$primary-green-dark: #008229;
+
+$gradient-orange: linear-gradient(134deg, #47d4d7, #5192ff);
+$gradient-green: linear-gradient(180deg, #009a3b 0%, #008229 100%);
+$gradient-vibrant: linear-gradient(
+  135deg,
+  #ff9922 0%,
+  #ff6b6b 50%,
+  #4ecdc4 100%
+);
+
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+// ===== МАКРОСЫ =====
+@mixin smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin hover-lift {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.container {
+  width: 1020px;
+  max-width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flex123 {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.promoPage {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pricepromo {
+  margin-top: 20px;
+  font-size: 70px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  background: $gradient-vibrant;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
+}
+
+.pricefact {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  color: #666;
+}
+
+// ===== H ТЕГИ =====
+.h2 {
+  margin-top: 40px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  color: #333;
+  background: linear-gradient(134deg, #47d4d7, #5192ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.h21 {
+  margin-top: 40px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  color: #333;
+}
+
+.h22 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+  line-height: 1.4;
+}
+
+.h212 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  text-align: center;
+  background: $gradient-vibrant;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.h3 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.h4 {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+  width: 90%;
+  line-height: 1.6;
+}
+
+.h411 {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.h6 {
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  color: #666;
+}
+
+// ===== INPUT =====
+.inputName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  border: 2px solid #f0f0f0;
+  background: #f9f9f9;
+  @include smooth-transition;
+
+  &:focus {
+    border-color: $primary-orange;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 153, 34, 0.1);
+  }
+}
+
+.inputPhone {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  outline: none;
+  @include smooth-transition;
+  font-family: "Nunito", sans-serif;
+
+  &:focus {
+    border-color: $primary-orange;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 153, 34, 0.1);
+  }
+
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+.promoInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 153, 34, 0.05) 0%,
+    rgba(255, 153, 34, 0.02) 100%
+  );
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 153, 34, 0.2);
+
+  input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+// ===== FLEX =====
+.flex {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  // flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+// ===== КНОПКИ =====
+.continue {
+  width: 90%;
+  padding: 12px 24px;
+  background: $gradient-green;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  @include smooth-transition;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 154, 59, 0.4);
+  }
+}
+
+// ===== ВИДЕО КОНТЕЙНЕР =====
+.videoContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.colum123 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+// ===== WATERMARK =====
+.watermarkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.watermarkText {
+  position: absolute;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 3px;
+  transform: rotate(-25deg);
+  user-select: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.watermarkTopLeft {
+  top: 15%;
+  left: 5%;
+  transform: rotate(-25deg);
+}
+
+.watermarkBottomRight {
+  bottom: 15%;
+  right: 5%;
+  transform: rotate(-25deg);
+}
+
+.logoWatermark {
+  width: 100%;
+  opacity: 0.7;
+}
+
+// ===== ФАЙЛ ИНПУТ =====
+.fileInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+
+  input[type="file"] {
+    display: none;
+  }
+
+  img {
+    width: 360px;
+    border-radius: 8px;
+    box-shadow: $shadow-md;
+  }
+
+  label {
+    display: inline-block;
+    padding: 12px 24px;
+    background: $gradient-orange;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    @include smooth-transition;
+    box-shadow: $shadow-md;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 153, 34, 0.4);
+    }
+  }
+}
+
+// ===== PREVIEW GRID =====
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.previewItem {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  background: #f0f0f0;
+  @include smooth-transition;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-lg;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .dragHandle {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #666;
+    border-radius: 0.25rem;
+    cursor: grab;
+    opacity: 0.8;
+  }
+
+  .removeButton {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 51, 51, 0.9);
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    @include smooth-transition;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: #ff1111;
+      transform: scale(1.1);
+    }
+  }
+
+  .skipped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #ccc;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+// ===== МОДАЛЬНОЕ ОКНО =====
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include smooth-transition;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+  }
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+  box-shadow: $shadow-md;
+  margin-bottom: 1rem;
+}
+
+// ===== ОШИБКИ =====
+.error {
+  font-size: 18px;
+  color: #ff3333;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+}
+
+.war {
+  font-size: 32px;
+  color: #ff3333;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+// ===== RESPONSIVE =====
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .h2 {
+    font-size: 35px;
+  }
+
+  .h21 {
+    font-size: 26px;
+  }
+
+  .h22 {
+    font-size: 20px;
+  }
+
+  .h212 {
+    font-size: 32px;
+  }
+
+  .h3,
+  .h4,
+  .h6 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .pricepromo {
+    font-size: 52px;
+  }
+
+  .previewGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .modalContent {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .flex {
+    gap: 20px;
+    width: 100%;
+
+    button,
+    a {
+      flex: 1;
+      min-width: 100px;
+    }
+  }
+}

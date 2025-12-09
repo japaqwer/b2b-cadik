@@ -1,0 +1,52 @@
+.fAQ {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+  text-align: center;
+  h4 {
+    margin-top: -20px;
+  }
+  h2 {
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    text-align: center;
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .fAQ {
+    h2 {
+      font-weight: 500;
+      font-size: 34px;
+      text-wrap: nowrap;
+    }
+  }
+}
+.tel,
+.wat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  color: #fff;
+}
+.wat {
+  background: #22ca46;
+}
+.tel {
+  background: #1c93e3;
+}
+.flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

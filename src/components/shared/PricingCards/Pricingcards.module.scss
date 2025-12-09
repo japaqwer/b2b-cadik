@@ -1,0 +1,458 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+// ===== CARD STYLES =====
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &.featured {
+    border-color: #ffd700;
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.2);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  // padding-bottom: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: linear-gradient(135deg, #1a5f5f 0%, #2d8b8b 100%);
+
+  img {
+    // position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // object-fit: cover;
+  }
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: linear-gradient(
+  //     180deg,
+  //     transparent 60%,
+  //     rgba(0, 0, 0, 0.3) 100%
+  //   );
+  //   z-index: 1;
+  // }
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(81, 146, 255, 0.95);
+  color: #fff;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(71, 212, 215, 0.95);
+  }
+
+  svg {
+    margin-left: 4px;
+  }
+}
+
+// ===== CARD CONTENT =====
+.cardContent {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.planName {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price {
+  color: #5192ff;
+  font-size: 22px;
+}
+
+.planTitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.planDuration {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  margin: 0;
+}
+
+.createButton {
+  margin-top: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #47d4d7 0%, #5192ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(81, 146, 255, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(81, 146, 255, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ===== MODAL STYLES =====
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: rotate(90deg);
+  }
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+.videoFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modalFooter {
+  padding: 24px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  h2 {
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+}
+
+.modalCreateButton {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #47d4d7 0%, #5192ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(81, 146, 255, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(81, 146, 255, 0.4);
+  }
+}
+
+// ===== RESPONSIVE =====
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 16px;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+
+  .cardContent {
+    padding: 24px 20px;
+    gap: 10px;
+  }
+
+  .planName {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .planTitle {
+    font-size: 14px;
+  }
+
+  .planDuration {
+    font-size: 13px;
+  }
+
+  .createButton {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .playButton {
+    width: 70px;
+    height: 70px;
+
+    svg {
+      font-size: 28px;
+    }
+  }
+
+  .modal {
+    padding: 16px;
+  }
+
+  .modalContent {
+    border-radius: 12px;
+  }
+
+  .modalFooter {
+    padding: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .modalCreateButton {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+
+  .cardContent {
+    padding: 20px 16px;
+    gap: 8px;
+  }
+
+  .planName {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .planTitle {
+    font-size: 13px;
+  }
+
+  .planDuration {
+    font-size: 12px;
+  }
+
+  .createButton {
+    padding: 12px 20px;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .playButton {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+
+    svg {
+      font-size: 24px;
+    }
+  }
+
+  .closeButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .modalContent {
+    border-radius: 12px;
+  }
+
+  .modalFooter {
+    padding: 16px;
+    gap: 12px;
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .modalCreateButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 16px 10px;
+  }
+
+  .planName {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 17px;
+  }
+
+  .planTitle {
+    font-size: 12px;
+  }
+
+  .createButton {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}

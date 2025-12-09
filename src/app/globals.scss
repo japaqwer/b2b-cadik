@@ -1,0 +1,255 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+// ===== ЦВЕТОВАЯ ПАЛИТРА =====
+$primary-orange: #ff9922;
+$primary-orange-dark: #ff8800;
+$primary-orange-light: #ffb347;
+$primary-green: #009a3b;
+$primary-green-dark: #008229;
+$primary-green-light: #00c853;
+
+$neutral-white: #ffffff;
+$neutral-light: #f8f9fa;
+$neutral-gray: #f0f0f0;
+$neutral-text: #333333;
+$neutral-text-light: #666666;
+$neutral-text-lighter: #999999;
+
+$accent-blue: #4a90e2;
+$accent-purple: #7b68ee;
+$accent-pink: #ff69b4;
+$accent-red: #ff3333;
+
+// ===== ГРАДИЕНТЫ =====
+$gradient-orange: linear-gradient(
+  135deg,
+  $primary-orange 0%,
+  $primary-orange-dark 100%
+);
+$gradient-green: linear-gradient(
+  180deg,
+  $primary-green 0%,
+  $primary-green-dark 100%
+);
+$gradient-vibrant: linear-gradient(
+  135deg,
+  #ff9922 0%,
+  #ff6b6b 50%,
+  #4ecdc4 100%
+);
+
+// ===== ТЕНИ =====
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+
+// ===== ТРАНСФОРМАЦИИ =====
+@mixin hover-lift {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+  font-family: "Arco";
+  src: url("/fonts/ofont.ru_Arco.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gogono";
+  src: url("/fonts/gogono-cocoa-mochi-cyrillic.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FeltTipRomRegular";
+  src: url("/fonts/FeltTipRomRegular.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background: $neutral-white;
+  color: $neutral-text;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    // padding-left: 32px;
+    // padding-right: 32px;
+  }
+}
+
+// ===== КНОПКИ =====
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(134deg, #47d4d7, #5192ff);
+
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  @include smooth-transition;
+  box-shadow: $shadow-md;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 153, 34, 0.4);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.buttongreen {
+  background: $gradient-green;
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  @include smooth-transition;
+  box-shadow: $shadow-md;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 154, 59, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.buttonblue {
+  background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  @include smooth-transition;
+  box-shadow: $shadow-md;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// ===== ЦЕНТРИРОВАНИЕ =====
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// ===== АНИМАЦИИ =====
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

@@ -1,0 +1,59 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /settings/
+Disallow: /*?*
+Disallow: /*&*
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*_openstat
+Disallow: /*_utm
+Disallow: /*utm_
+Disallow: /*yclid
+Disallow: /*gclid
+Crawl-delay: 2
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 10
+
+Sitemap: https://cards.datki.net/sitemap.xml
+Sitemap: https://cards.datki.net/sitemap-index.xml
+
+Host: cards.datki.net
+
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&_openstat&yclid&gclid /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
