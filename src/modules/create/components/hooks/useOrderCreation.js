@@ -59,7 +59,7 @@ export function useOrderCreation() {
         const params = {
           template_id: template.id,
           cyclic,
-          referral: "b2b",
+          referral: "kg",
           promo_code: "b2b",
         };
         // if (appliedPromo) params.promo_code = appliedPromo;

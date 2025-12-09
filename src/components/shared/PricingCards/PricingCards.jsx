@@ -12,7 +12,7 @@ const pricingPlans = [
     title: "",
     duration: "Продолжительность 1 минута 28 секунд",
     image:
-      "https://3051c4dd-6445-4f5d-8dd4-ca4d65add868.selstorage.ru/templates/DMdetsadQ/preview/31be46cf-6c47-4d0a-9e0a-36976457740c.png",
+      "https://s3.eu-north-1.amazonaws.com/exclusivenedbucket/a05f2b43-3edf-4ece-a6a6-94c75681bc11.jpg",
     demoUrl: "https://kinescope.io/embed/oSgsHY7pX7PqforKwhHpdL",
     href: "/kvadrat/4eb9e1fd-730e-4f10-be02-cffd71c65867",
   },

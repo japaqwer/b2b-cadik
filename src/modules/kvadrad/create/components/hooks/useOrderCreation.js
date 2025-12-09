@@ -56,7 +56,7 @@ export function useOrderCreation() {
           intro: finalIntro || "",
         };
 
-        const params = { template_id: template.id, cyclic, referral: "b2b" };
+        const params = { template_id: template.id, cyclic, referral: "kg" };
         if (appliedPromo) params.promo_code = appliedPromo;
 
         const res = await axios.post(
