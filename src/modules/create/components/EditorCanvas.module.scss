@@ -231,18 +231,6 @@ input[type="file"] {
 
 // ===== RESPONSIVE =====
 
-// Планшеты и ноутбуки (769px - 1024px)
-@media (max-width: 1024px) and (min-width: 769px) {
-  .canvasWrapper {
-    max-width: calc(100vw - 60px);
-    padding: 20px;
-  }
-
-  .h6 {
-    font-size: 17px;
-  }
-}
-
 // Мобильные устройства (до 480px)
 @media (max-width: 660px) {
   .inputName {
@@ -259,10 +247,11 @@ input[type="file"] {
   .canvasWrapper {
     padding: 10px;
     margin: 10px 6px;
-    // max-width: calc(100vw - 12px);
-    canvas {
-      max-width: 360px;
-    }
+    max-width: calc(100vw - 24px);
+
+    // canvas {
+    //   max-width: 360px;
+    // }
   }
   .h8 {
     display: none;
