@@ -195,7 +195,7 @@ export function SplashEditor({ template, onCreate }) {
         </div>
       </div>
       <h2 className={s.h21} style={{ color: "#000" }}>
-        Можно изменить текст заставки
+        Проверьте еще раз, все ли правильно?
       </h2>
       <div className="center">
         {!isConfirmed ? (
